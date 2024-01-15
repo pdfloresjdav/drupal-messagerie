@@ -1,0 +1,8 @@
+messagerie-css:
+  version: VERSION
+  css:
+    css/messagerie.css: {} 
+messagerie-js:   
+  version: VERSION  
+  js:
+    js/messagerie.js: {}

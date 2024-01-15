@@ -1,0 +1,148 @@
+messagerie.messagerie:
+  path: '/messagerie'
+  defaults:
+    _title: 'ma messagerie'
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::content' 
+  requirements:
+    _permission: 'access content'
+messagerie.save.comment:
+  path: '/messagerie/js/comment/save'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::saveCommentJS'
+    _title: 'Save comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.save.comment.reply:
+  path: '/messagerie/js/comment/reply/save'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::saveCommentReplyJS'
+    _title: 'Save comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.save.comment.contact:
+  path: '/messagerie/js/comment/contact/save'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::saveCommentContactJS'
+    _title: 'Save comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.hide.comment:
+  path: '/messagerie/js/comment/hide'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::hideCommentJS'
+    _title: 'Hide comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.add.comment:
+  path: '/messagerie/js/comment/add'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::addCommentJS'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.add.comment_reply:
+  path: '/messagerie/js/comment/reply/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::addCommentReplyJS'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.add.comment_reply_contact:
+  path: '/messagerie/js/comment/reply/contact/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::addCommentReplyContactJS'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment:
+  path: '/messagerie/js/comment/load/all'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentAll'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_send:
+  path: '/messagerie/js/comment/load/send'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentSend'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_del:
+  path: '/messagerie/js/comment/load/del'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentDelete'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_sup:
+  path: '/messagerie/js/comment/sup/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentSup'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_info:
+  path: '/messagerie/js/comment/load/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::addCommentLoadJS'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_info_send:
+  path: '/messagerie/js/comment/load_send/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::addCommentLoadSendJS'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+
+messagerie.load.comment.pag:
+  path: '/messagerie/js/comment/load/all/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentPagAll'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_del.pag:
+  path: '/messagerie/js/comment/load/del/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentPagDelete'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.load.comment_send.pag:
+  path: '/messagerie/js/comment/load/send/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::contentPagSend'
+    _title: 'Add comment via js'
+  requirements:
+    _permission: 'access content'
+messagerie.autocomplete.users:
+  path: '/admin/messagerie/autocomplete/users'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'
+messagerie.add.comment_reply_all:
+  path: '/messagerie/js/comment/replyall/{arg}'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::addCommentReplyAllJS'
+    _title: 'Add comment replay all via js'
+  requirements:
+    _permission: 'access content'
+messagerie.save.all.comment:
+  path: '/messagerie/js/comment/saveall'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::saveAllCommentJS'
+    _title: 'Save comment all via js'
+  requirements:
+    _permission: 'access content'
+messagerie.check.new:
+  path: '/messagerie/js/check/new'
+  defaults:
+    _controller: '\Drupal\messagerie\Controller\MessagerieController::checNewJS'
+    _title: 'Check new messages via js'
+  requirements:
+    _permission: 'access content'

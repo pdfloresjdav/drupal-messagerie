@@ -1,0 +1,6 @@
+<?php
+
+function messagerie_preprocess_block(&$variables) {
+    $variables['#attached']['library'][] = 'messagerie/messagerie-css';
+  
+}

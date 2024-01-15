@@ -1,0 +1,134 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+* @file
+* Install and uninstall functions for the Sharepoint module.
+*/
+
+/**
+ * Write a line or two here about what the updates are for.
+ * This is shown to users on the update.php page.
+ */
+function messagerie_update_8601() {
+
+  $spec = [
+    'description' => 'Messagerie',
+    'fields' => [
+      'mid' => [
+        'description' => 'Primary Key: unique ID for message.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => array(
+        'description' => 'The user send.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'uidctc' => array(
+        'description' => 'The user receibe.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'subject' => [
+        'description' => 'The message subject',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'description' => [
+        'description' => 'The message description',
+        'type' => 'varchar',
+        'length' => 1024,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'read' => array(
+        'description' => "The message description.",
+        'type' => 'char',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'delete' => array(
+        'description' => "The message description.",
+        'type' => 'char',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '0',
+      ),
+      'timestamp' => array(
+        'description' => "The time the message was created",
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ],
+    'primary key' => ['mid'],
+  ]; 
+ $schema = Database::getConnection()->schema();
+ $schema->createTable('messagerie', $spec);
+
+}
+
+/**
+ * Write a line or two here about what the updates are for.
+ * This is shown to users on the update.php page.
+ */
+//already messagerie_update_8604 next time messagerie_update_8605
+function messagerie_update_8602() {
+
+  $database = \Drupal::database();
+  $schema = $database->schema();
+  $table_name = 'messagerie';
+
+  $table_schema = array(
+        'description' => "The time the message was created",
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+  );
+
+  $schema->addField($table_name, 'timestampdel', $table_schema);
+
+  $table_schema1 = array(
+        'description' => "delete from sender view",
+        'type' => 'char',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '0',
+  );
+
+  $schema->addField($table_name, 'deletesender', $table_schema1);
+
+  $table_schema2 = array(
+        'description' => "cc send",
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '0',
+  );
+
+  $schema->addField($table_name, 'ccsend', $table_schema2);
+}
+
+function messagerie_update_8605() {
+
+  $database = \Drupal::database();
+  $schema = $database->schema();
+  $table_name = 'messagerie';
+
+  $table_schema = array(
+        'description' => "The file to be send",
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+  );
+
+  $schema->addField($table_name, 'fid', $table_schema);
+}

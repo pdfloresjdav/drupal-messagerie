@@ -1,0 +1,6 @@
+name: "Module Messagerie"
+description: "Messagerie feature"
+type: module
+core: 8.x
+configure: 
+          - messagerie.settings
